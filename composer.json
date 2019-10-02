@@ -1,0 +1,15 @@
+{
+    "name": "neoan3-apps/hcaptcha",
+    "description": "hcaptcha PHP implementation",
+    "require-dev": {
+        "phpunit/phpunit": "^8.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "neoan",
+            "email": "sroehrl@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test h-capture</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+
+</head>
+<body>
+<form action="test.php" method="post">
+    <input type="hidden" value="test-me" name="test-me">
+        <!--    Place your real site-key here  -->
+    <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div>
+    <input type="submit" value="test">
+</form>
+</body>
+</html>
