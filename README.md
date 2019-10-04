@@ -1,19 +1,30 @@
-# PHP hcaptcha
+# PHP hcaptcha 
 
-Easy integration of [hcaptcha](https://hcaptcha.com), a service that 
-- keeps bots out
-- earns you money
-- is privacy conscious
+![hcaptcha header](https://hcaptcha.com/static/img/hcaptcha-og_img.png)
+
+---
+
+:warning: I'm not affiliated in any way with hCaptcha :warning:
+
+---
+
+Easy integration of [hCaptcha](https://hcaptcha.com), a service that 
+
+- Keeps bots out;
+- Earns you money;
+- Is privacy conscious.
 
 ## Quick start
 
-1. Sign up at [hcaptcha](https://hcaptcha.com) and get your secret & site key.
+1. Sign up at [hCaptcha](https://hcaptcha.com).
 
-2. Get this package `composer require neoan3-apps/hcaptcha`
+2. Fetch your public key and site key from the [settings](https://dashboard.hcaptcha.com/settings) tab.
 
-3. Frontend:
+3. Get this package `composer require neoan3-apps/hcaptcha`
 
-    ```html
+4. Set up your **front end** as:
+
+```html
     <head>
         <script src="https://hcaptcha.com/1/api.js" async defer></script>
         ...
@@ -27,9 +38,11 @@ Easy integration of [hcaptcha](https://hcaptcha.com), a service that
     </form>
     
     </body>
-    ```
-4. Backend
-    ```PHP
+```
+
+5. Now in your PHP **back end**:
+
+```php
    \Neoan3\Apps\Hcapture::setEnvironment([
        'siteKey' => 'your-sitekey',
        'secret' => 'your-secret',
@@ -39,13 +52,8 @@ Easy integration of [hcaptcha](https://hcaptcha.com), a service that
    {
        ... do stuff
    }
-   ```
+```
     
-## methods
+## Advanced setup
 
-### setEnvironment(array $environmentVariables)
-### setSecret(string $value)
-### setApiKey(string $value)
-### setSiteKey(string $value)
-### isHuman()
-### stats()
+You can have more details about advanced setup on [the configuration page](https://docs.hcaptcha.com/configuration) of the documentation.
