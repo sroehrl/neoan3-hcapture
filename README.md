@@ -1,19 +1,30 @@
-# PHP hcaptcha
+# PHP hcaptcha 
 
-Easy integration of [hcaptcha](https://hcaptcha.com), a service that 
-- keeps bots out
-- earns you money
-- is privacy conscious
+![hcaptcha header](https://hcaptcha.com/static/img/hcaptcha-og_img.png)
+
+---
+
+:warning: I'm not affiliated in any way with hCaptcha :warning:
+
+---
+
+Easy integration of [hCaptcha](https://hcaptcha.com), a service that 
+
+- Keeps bots out;
+- Earns you money;
+- Is privacy conscious.
 
 ## Quick start
 
-1. Sign up at [hcaptcha](https://hcaptcha.com) and get your secret & site key.
+1. Sign up at [hCaptcha](https://hcaptcha.com).
 
-2. Get this package `composer require neoan3-apps/hcaptcha`
+2. Fetch your public key and site key from the [settings](https://dashboard.hcaptcha.com/settings) tab.
 
-3. Frontend:
+3. Get this package `composer require neoan3-apps/hcaptcha`
 
-    ```html
+4. Set up your **front end** as:
+
+```html
     <head>
         <script src="https://hcaptcha.com/1/api.js" async defer></script>
         ...
@@ -27,9 +38,11 @@ Easy integration of [hcaptcha](https://hcaptcha.com), a service that
     </form>
     
     </body>
-    ```
-4. Backend
-    ```PHP
+```
+
+5. Now in your PHP **back end**:
+
+```php
    \Neoan3\Apps\Hcapture::setEnvironment([
        'siteKey' => 'your-sitekey',
        'secret' => 'your-secret',
@@ -39,13 +52,46 @@ Easy integration of [hcaptcha](https://hcaptcha.com), a service that
    {
        ... do stuff
    }
-   ```
-    
-## methods
+```
 
-### setEnvironment(array $environmentVariables)
-### setSecret(string $value)
-### setApiKey(string $value)
-### setSiteKey(string $value)
-### isHuman()
-### stats()
+## hCapture neon3 API
+
+Here are some methods for you to use and setup hCaptcha in your project.
+
+### Environment setup
+
+For your global environment setup, please use the following methods:
+
+```php
+// Set your own secret key
+setSecret(string $value);
+
+// API Key of hCaptcha linked to your account
+setApiKey(string $value);
+
+// Secret site key linked to your site
+// See: https://docs.hcaptcha.com/api#addnewsitekey
+setSiteKey(string $value);
+
+// With an array of environment variables provided, set all of them
+// This is a 'shortcut' for all three previous methods
+setEnvironment(array $environmentVariables);
+```
+
+### hCaptcha utils
+
+To retrieve hCaptcha informations, here are the methods you will need:
+
+```php
+// Check if the hCaptcha verification was successful
+isHuman();
+
+// Retrieve all statitics of the site corresponding to the 
+// provided variables (an error value is returned in case of
+// invalid credentials)
+stats();
+```
+    
+## Advanced setup
+
+You can have more details about advanced setup on [the configuration page](https://docs.hcaptcha.com/configuration) of the documentation.
