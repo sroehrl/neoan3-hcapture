@@ -54,7 +54,7 @@ Easy integration of [hCaptcha](https://hcaptcha.com), a service that
    }
 ```
 
-## hCapture neon3 API
+## hCapture neoan3 API
 
 Here are some methods for you to use and setup hCaptcha in your project.
 
