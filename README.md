@@ -80,7 +80,7 @@ setEnvironment(array $environmentVariables);
 
 ### hCaptcha utils
 
-To retrieve hCaptcha informations, here are the methods you will need:
+To retrieve hCaptcha information, here are the methods you will need:
 
 ```php
 // Check if the hCaptcha verification was successful
