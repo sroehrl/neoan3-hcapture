@@ -53,6 +53,44 @@ Easy integration of [hCaptcha](https://hcaptcha.com), a service that
        ... do stuff
    }
 ```
+
+## hCapture neon3 API
+
+Here are some methods for you to use and setup hCaptcha in your project.
+
+### Environment setup
+
+For your global environment setup, please use the following methods:
+
+```php
+// Set your own secret key
+setSecret(string $value);
+
+// API Key of hCaptcha linked to your account
+setApiKey(string $value);
+
+// Secret site key linked to your site
+// See: https://docs.hcaptcha.com/api#addnewsitekey
+setSiteKey(string $value);
+
+// With an array of environment variables provided, set all of them
+// This is a 'shortcut' for all three previous methods
+setEnvironment(array $environmentVariables);
+```
+
+### hCaptcha utils
+
+To retrieve hCaptcha informations, here are the methods you will need:
+
+```php
+// Check if the hCaptcha verification was successful
+isHuman();
+
+// Retrieve all statitics of the site corresponding to the 
+// provided variables (an error value is returned in case of
+// invalid credentials)
+stats();
+```
     
 ## Advanced setup
 
