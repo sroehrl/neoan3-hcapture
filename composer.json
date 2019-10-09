@@ -11,5 +11,9 @@
             "email": "sroehrl@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+          "Neoan3\\Apps\\": "./"
+        }
+  }
 }
