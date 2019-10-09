@@ -8,7 +8,7 @@
 
 ---
 
-Easy integration of [hCaptcha](https://hcaptcha.com), a service that 
+Easy integration of [hCaptcha](https://hCaptcha.com/?r=20737c4f354f), a service that 
 
 - Keeps bots out;
 - Earns you money;
@@ -16,7 +16,7 @@ Easy integration of [hCaptcha](https://hcaptcha.com), a service that
 
 ## Quick start
 
-1. Sign up at [hCaptcha](https://hcaptcha.com).
+1. Sign up at [hCaptcha](https://hCaptcha.com/?r=20737c4f354f).
 
 2. Fetch your public key and site key from the [settings](https://dashboard.hcaptcha.com/settings) tab.
 
