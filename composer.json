@@ -15,5 +15,8 @@
         "psr-4": {
           "Neoan3\\Apps\\": "./"
         }
-  }
+  },
+    "require": {
+        "ext-json": "*"
+    }
 }

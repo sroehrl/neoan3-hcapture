@@ -41,12 +41,14 @@ class Hcapture
     }
 
     /**
+     * @param array $input
+     *
      * @return mixed
      * @throws Exception
      */
-    static function isHuman()
+    static function isHuman($input=[])
     {
-        self::getPost();
+        self::getPost($input);
         $call = 'https://hcaptcha.com/siteverify?secret=' . self::$secret . self::$remoteIpString;
         $call .= '&response=' . self::$clientResponse;
         $check = file_get_contents($call);
@@ -66,11 +68,15 @@ class Hcapture
     }
 
     /**
+     * @param array $input
+     *
      * @throws Exception
      */
-    private static function getPost()
+    private static function getPost($input=[])
     {
-        if (isset($_POST['h-captcha-response'])) {
+        if(isset($input['h-captcha-response'])){
+            self::$clientResponse = $input['h-captcha-response'];
+        } elseif (isset($_POST['h-captcha-response'])) {
             self::$clientResponse = $_POST['h-captcha-response'];
         } else {
             throw new Exception('Missing h-captcha');
