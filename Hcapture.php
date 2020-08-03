@@ -10,7 +10,7 @@ class Hcapture
     private static $apiKey = false;
     private static $siteKey = false;
     private static $clientResponse;
-    private static $remoteIpString = '';
+    private static $remoteIp = false;
 
     /**
      * @param $array
@@ -49,11 +49,15 @@ class Hcapture
     static function isHuman($input=[])
     {
         self::getPost($input);
-        $call = 'https://hcaptcha.com/siteverify?secret=' . self::$secret . self::$remoteIpString;
-        $call .= '&response=' . self::$clientResponse;
-        $check = file_get_contents($call);
-        $response = json_decode($check, true);
-        return $response['success'];
+        $call = [
+            'secret=' . self::$secret,
+            'response=' . self::$clientResponse
+        ];
+        if(self::$remoteIp){
+            $call[] = 'remoteip=' . self::$remoteIp;
+        }
+        $check = Curl::post('https://hcaptcha.com/siteverify?'.implode('&',$call), []);
+        return $check['success'];
     }
 
     static function stats()
@@ -82,7 +86,7 @@ class Hcapture
             throw new Exception('Missing h-captcha');
         }
         if (isset($_SERVER['REMOTE_ADDR'])) {
-            self::$remoteIpString = '&remoteip=' . $_SERVER['REMOTE_ADDR'];
+            self::$remoteIp = $_SERVER['REMOTE_ADDR'];
         }
     }
 }
