@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Hcapture.php';
+require_once dirname(__DIR__).'/Hcapture.php';
 
 use Neoan3\Apps\Hcapture;
 use PHPUnit\Framework\TestCase;
@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class HcaptureTest extends TestCase
 {
 
-    public function testIsHuman()
+    public function testIsHuman() : void
     {
         $this->fakeResponse();
         $this->assertTrue(Hcapture::isHuman());

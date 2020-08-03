@@ -1,22 +1,23 @@
 {
-    "name": "neoan3-apps/hcaptcha",
-    "description": "hcaptcha PHP implementation",
-    "require-dev": {
-        "phpunit/phpunit": "^8.3"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "neoan",
-            "email": "sroehrl@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-          "Neoan3\\Apps\\": "./"
-        }
+  "name": "neoan3-apps/hcaptcha",
+  "description": "hcaptcha PHP implementation",
+  "require-dev": {
+    "phpunit/phpunit": "^8.5.8"
   },
-    "require": {
-        "ext-json": "*"
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "neoan",
+      "email": "sroehrl@gmail.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Neoan3\\Apps\\": "./"
+    }
+  },
+  "require": {
+    "ext-json": "*",
+    "neoan3-apps/curl": "^1.0"
+  }
 }
