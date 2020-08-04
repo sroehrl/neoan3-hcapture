@@ -1,6 +1,10 @@
 # PHP hcaptcha 
 
-![hcaptcha header](https://hcaptcha.com/static/img/hcaptcha-og_img.png)
+[![Build Status](https://travis-ci.com/sroehrl/neoan3-hcapture.svg?branch=master)](https://travis-ci.com/sroehrl/neoan3-hcapture)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fd8425ca4b8d2d8cb2ca/maintainability)](https://codeclimate.com/github/sroehrl/neoan3-hcapture/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/fd8425ca4b8d2d8cb2ca/test_coverage)](https://codeclimate.com/github/sroehrl/neoan3-hcapture/test_coverage)
+
+![hcaptcha header](https://assets-global.website-files.com/5c73e7ea3f8bb2a85d2781db/5c76851156b74e53ab8b2a27_hcaptha-logo-white.svg)
 
 ---
 
