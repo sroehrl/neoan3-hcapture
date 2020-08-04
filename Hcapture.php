@@ -9,7 +9,7 @@ class Hcapture
     private static $secret;
     private static $apiKey = false;
     private static $siteKey = false;
-    private static $clientResponse;
+    public static $clientResponse;
     private static $remoteIp = false;
 
     /**
@@ -63,12 +63,8 @@ class Hcapture
     static function stats()
     {
         $call = 'https://hcaptcha.com/user/sitekey/'.self::$siteKey.'/stats?api_key=' .self::$apiKey;
-        try{
-            $result = json_decode(file_get_contents($call),true);
-            return $result;
-        } catch (Exception $e) {
-            return ['error' => 'rejected. Check variables'];
-        }
+        return json_decode(file_get_contents($call),true);
+
     }
 
     /**
